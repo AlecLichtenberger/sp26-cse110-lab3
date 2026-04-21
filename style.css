@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-color: blue; /* CSS variable */
+}
+
 /* selector list */
 h1, h2 {
   font-family: 'Times New Roman', Times, serif;
@@ -11,5 +15,38 @@ h1, h2 {
 
 p {
   font-size: 16pt; /* absolute unit */
+}
+
+section p {
+  font-size: 1.2em; /* relative unit */
+}
+
+/* id selector */
+#agenda {
+  background-color: rgb(240, 240, 255); /* rgb */
+}
+
+/* attribute selector */
+input[type="text"] {
+  border: 1px solid black;
+}
+
+/* pseudo-class */
+a:hover {
+  color: orange; /* color keyword */
+}
+
+/* border + padding + margin */
+section {
+  
+  padding: 10px; /* absolute unit */
+  margin: 1rem; /* relative unit */
+}
+
+/* media query */
+@media (max-width: 600px) {
+  body {
+    font-size: 3vw; /* relative unit */
+  }
 }
 
