@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+/* selector list */
+h1, h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px; /* absolute unit */
+  color: var(--main-color, black); /* variable + fallback */
+}
+
+p {
+  font-size: 16pt; /* absolute unit */
+}
+
