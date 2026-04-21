@@ -1,24 +1,30 @@
+/* comment */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+  --main-color: blue;
+}
+
 * {
   box-sizing: border-box;
 }
 
-:root {
-  --main-color: blue; /* CSS variable */
-}
-
-/* selector list */
+/* element + selector list */
 h1, h2 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 20px; /* absolute unit */
-  color: var(--main-color, black); /* variable + fallback */
+  font-family: 'Inter', 'Times New Roman', Times, serif;
+  font-size: 20px; /* absolute */
+  color: var(--main-color, black);
+  text-align: center; /* text */
 }
 
 p {
-  font-size: 16pt; /* absolute unit */
+  font-size: 16pt; /* absolute */
 }
 
+/* descendant */
 section p {
-  font-size: 1.2em; /* relative unit */
+  font-size: 1.2em; /* relative */
 }
 
 /* id selector */
@@ -31,16 +37,29 @@ input[type="text"] {
   border: 1px solid black;
 }
 
-/* pseudo-class */
+/* pseudo-classes */
 a:hover {
-  color: orange; /* color keyword */
+  color: orange; /* keyword */
 }
 
-/* border + padding + margin */
+a:active {
+  color: red;
+}
+
+/* box model (short + long) */
 section {
-  border: 2px solid #000; /* hex + shorthand */
-  padding: 10px; /* absolute unit */
-  margin: 1rem; /* relative unit */
+  border: 2px solid #000; /* shorthand */
+  border-style: solid;    /* longhand */
+  border-width: 2px;
+  border-color: #000;
+
+  padding: 10px;          /* shorthand */
+  padding-left: 5px;      /* longhand */
+
+  margin: 1rem;           /* shorthand */
+  margin-top: 5px;        /* longhand */
+
+  min-width: 200px;       /* sizing */
 }
 
 /* display */
@@ -48,28 +67,50 @@ span {
   display: inline-block;
 }
 
-/* sizing */
 img {
-  width: 200px;
+  display: block;
+  width: 200px;           /* absolute */
   max-width: 100%;
+  height: auto;           /* sizing */
 }
 
-/* position */
+/* position (2 types) */
 nav {
   position: sticky;
   top: 0;
+}
+
+body {
+  position: relative;
+  background-color: lightgray;
+  font-family: 'Inter', sans-serif;
 }
 
 /* flexbox */
 #media {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 /* grid */
 form fieldset {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* combinators */
+main > section {
+  background-color: white; /* child */
+}
+
+h2 + p {
+  color: black; /* adjacent sibling */
+}
+
+h2 ~ ul {
+  color: black; /* general sibling */
 }
 
 /* :has selector */
@@ -77,10 +118,41 @@ section:has(img) {
   border-color: blue;
 }
 
+/* class selector */
+.present {
+  color: orange;
+}
+
+/* element.class */
+h3.present {
+  font-size: 1.5em;
+}
+
+/* extra color formats */
+h1 {
+  color: hsl(210, 60%, 40%);
+}
+
+#notes {
+  color: color-mix(in srgb, blue 50%, white 50%);
+}
+
+/* absolute unit #3 */
+footer {
+  border-left: 1cm solid black;
+}
+
+/* nested selector */
+body {
+  & footer {
+    text-align: center;
+  }
+}
+
 /* media query */
 @media (max-width: 600px) {
   body {
-    font-size: 3vw; /* relative unit */
+    font-size: 3vw; /* relative */
   }
 }
 
