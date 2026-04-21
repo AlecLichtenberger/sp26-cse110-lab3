@@ -38,9 +38,43 @@ a:hover {
 
 /* border + padding + margin */
 section {
-  
+  border: 2px solid #000; /* hex + shorthand */
   padding: 10px; /* absolute unit */
   margin: 1rem; /* relative unit */
+}
+
+/* display */
+span {
+  display: inline-block;
+}
+
+/* sizing */
+img {
+  width: 200px;
+  max-width: 100%;
+}
+
+/* position */
+nav {
+  position: sticky;
+  top: 0;
+}
+
+/* flexbox */
+#media {
+  display: flex;
+  flex-direction: column;
+}
+
+/* grid */
+form fieldset {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* :has selector */
+section:has(img) {
+  border-color: blue;
 }
 
 /* media query */
