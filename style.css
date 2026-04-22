@@ -144,7 +144,7 @@ footer {
 
 /* nested selector */
 body {
-  & footer {
+  footer {
     text-align: center;
   }
 }
